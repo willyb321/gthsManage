@@ -37,6 +37,16 @@ var checkCmd = &cobra.Command{
 			fmt.Println("Config Check Successful")
 			fmt.Println("Attempting to connect to configured server to test. If it is successful it will connect then exit.\nIf it is not working it will probably hang so just ctrl + c")
 			clientTest := sshConnect()
+			session, err := clientTest.NewSession()
+			if err != nil {
+				fmt.Println(err)
+			}
+			output, err := session.CombinedOutput("echo Successfully connected")
+			if err != nil {
+				fmt.Println(err)
+			}
+			fmt.Println(string(output))
+			session.Close()
 			clientTest.Close()
 		}
 	},
