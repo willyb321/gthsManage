@@ -1,25 +1,23 @@
-builds:
-	- hooks:
-		post: ./postrelease.sh
-	- binary: gthsmanage
-	- main: main.go
-	- goos:
-      - windows
-      - darwin
-      - linux
-	- goarch:
-      - amd64
-
-archive:
-	format: zip
-	replacements:
-		amd64: x64
-		darwin: macOS
+project_name: gthsManage
+release:
+  github:
+    owner: willyb321
+    name: gthsManage
 brew:
-  # Reporitory to push the tap to.
-	github:
-		owner: willyb321
-		name: brewing
-	folder: Formula
-	homepage: "https://github.com/willyb321/gthsManage/"
-	description: "Software to manage the GTHS Noticeboard."
+  github:
+    owner: willyb321
+    name: brewing
+builds:
+- goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - amd64
+  main: main.go
+  binary: gthsManage
+archive:
+  replacements:
+    amd64: x64
+    darwin: macOS
+  format: zip
