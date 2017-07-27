@@ -31,7 +31,6 @@ var deployFreshCmd = &cobra.Command{
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println("hi")
 		scanner := bufio.NewScanner(output)
 		scanner.Split(bufio.ScanRunes)
 		for scanner.Scan() {
@@ -58,7 +57,6 @@ func deployFresh() (output io.Reader, err error) {
 	}
 	output = io.MultiReader(outReader, errReader)
 	err = session.Start("/home/gths/bootboard.sh")
-	// client.Close()
 	if err != nil {
 		fmt.Println(err)
 	}

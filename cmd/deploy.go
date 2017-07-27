@@ -31,7 +31,6 @@ var deployCmd = &cobra.Command{
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println("hi")
 		scanner := bufio.NewScanner(output)
 		scanner.Split(bufio.ScanRunes)
 		for scanner.Scan() {
