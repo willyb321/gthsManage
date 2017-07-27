@@ -39,8 +39,10 @@ func sshConnect() *ssh.Client {
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
 	// Connect to the remote server and perform the SSH handshake.
+	fmt.Println("======================================")
 	fmt.Println("SSH Config:")
 	fmt.Println("SSH URL: " + ip + ":" + port)
+	fmt.Println("======================================")
 	fmt.Println("Is this correct? If not ctrl+c in the next 1 second")
 	time.Sleep(1 * time.Second)
 	client, err := ssh.Dial("tcp", ip+":"+port, config)
