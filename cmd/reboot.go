@@ -23,7 +23,7 @@ import (
 var rebootCmd = &cobra.Command{
 	Use:   "reboot",
 	Short: "Reboot the GTHS Noticeboard.",
-	Long:  `Reboot the GTHS Noticeboard. Wait for a while after this has run.`,
+	Long:  "Reboot the GTHS Noticeboard. It will take a while to boot after running this.\nThe board will redeploy automatically when it has booted.",
 	Run: func(cmd *cobra.Command, args []string) {
 		rebooted := reboot()
 		if rebooted {
@@ -35,7 +35,7 @@ var rebootCmd = &cobra.Command{
 }
 
 func reboot() bool {
-	fmt.Println("It is recommended that you can see the GTHS Noticeboard before running. This ensures that you can\nget the board running again if something breaks")
+	fmt.Println("It is recommended that you can see the GTHS Noticeboard before rebooting. This ensures that you can\nget the board running again if something breaks")
 	fmt.Println("Are you sure you want to reboot? This will take a while. y/n")
 	confirm := askForConfirmation()
 	if confirm != false {
