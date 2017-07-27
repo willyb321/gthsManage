@@ -6,7 +6,11 @@ release:
 brew:
   github:
     owner: willyb321
-    name: brewing
+    name: homebrew-brewing
+  homepage: "https://github.com/willyb321/gthsManage/"
+  description: "Software to keep the GTHS Noticeboard running."
+  install: |
+    bin.install "GthsManage"
 builds:
 - goos:
   - linux
