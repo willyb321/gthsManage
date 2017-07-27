@@ -14,8 +14,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -26,9 +24,6 @@ var configCmd = &cobra.Command{
 	Long: `You can use config create to generate a config from questions.
 	You can use config check to make sure that there is the correct config.
 	You can use config get to print the current config`,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("config called")
-	},
 }
 
 func init() {
