@@ -35,14 +35,15 @@ var rebootCmd = &cobra.Command{
 }
 
 func reboot() bool {
-	client := sshConnect()
-	session, err := client.NewSession()
-	if err != nil {
-		fmt.Println(err)
-	}
+	fmt.Println("It is recommended that you can see the GTHS Noticeboard before running. This ensures that you can\nget the board running again if something breaks")
 	fmt.Println("Are you sure you want to reboot? This will take a while. y/n")
 	confirm := askForConfirmation()
 	if confirm != false {
+		client := sshConnect()
+		session, err := client.NewSession()
+		if err != nil {
+			fmt.Println(err)
+		}
 		err = session.Run("shutdown -r now")
 		if err != nil {
 			fmt.Println(err)
