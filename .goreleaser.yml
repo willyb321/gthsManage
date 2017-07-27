@@ -15,3 +15,11 @@ archive:
 	replacements:
 		amd64: x64
 		darwin: macOS
+brew:
+  # Reporitory to push the tap to.
+	github:
+		owner: willyb321
+		name: brewing
+	folder: Formula
+	homepage: "https://github.com/willyb321/gthsManage/"
+	description: "Software to manage the GTHS Noticeboard."
