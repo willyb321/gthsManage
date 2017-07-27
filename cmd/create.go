@@ -49,7 +49,7 @@ func createConfig() {
 			configs = append(configs, text)
 			dir, _ := homedir.Dir()
 			if i == 2 {
-				data := fmt.Sprintf("port: %v\nip: %v\nidfile: %s", configs[0], configs[1], filepath.Join(configs[2]))
+				data := fmt.Sprintf("ip: %v\nport: %v\nidfile: %s", configs[0], configs[1], filepath.Join(configs[2]))
 				ioutil.WriteFile(filepath.Join(dir, ".gthsManage.yaml"), []byte(data), 0644)
 				fmt.Println("Wrote the following config:")
 				fmt.Println(data)
