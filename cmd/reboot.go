@@ -14,7 +14,6 @@
 package cmd
 
 import (
-	"bytes"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -26,28 +25,31 @@ var rebootCmd = &cobra.Command{
 	Short: "Reboot the GTHS Noticeboard.",
 	Long:  `Reboot the GTHS Noticeboard. Wait for a while after this has run.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		reboot()
-		fmt.Println("reboot called")
+		rebooted := reboot()
+		if rebooted {
+			fmt.Println("Reboot called")
+		} else {
+			fmt.Println("Not rebooting.")
+		}
 	},
 }
 
-func reboot() {
+func reboot() bool {
 	client := sshConnect()
 	session, err := client.NewSession()
 	if err != nil {
 		fmt.Println(err)
 	}
-	var b bytes.Buffer
-	session.Stdout = &b
 	fmt.Println("Are you sure you want to reboot? This will take a while. y/n")
 	confirm := askForConfirmation()
 	if confirm != false {
 		err = session.Run("shutdown -r now")
-		fmt.Println(b.String())
 		if err != nil {
 			fmt.Println(err)
 		}
+		return true
 	}
+	return false
 }
 
 func init() {
