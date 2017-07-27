@@ -44,7 +44,7 @@ func reboot() bool {
 		if err != nil {
 			fmt.Println(err)
 		}
-		err = session.Run("shutdown -r now")
+		err = session.Run("sudo shutdown -r now")
 		if err != nil {
 			fmt.Println(err)
 		}
