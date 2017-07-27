@@ -1,5 +1,18 @@
 ## Change Log
 
+### upcoming (2017/07/27 23:23 +00:00)
+- [c611324](https://github.com/willyb321/gthsManage/commit/c611324d6413d0f824b2f234c2f975a8b067b98c) add update command (@willyb321)
+- [dcb7ea1](https://github.com/willyb321/gthsManage/commit/dcb7ea11af010d7b30ee663ba773b4761502c543) releasing stuff (@willyb321)
+
+### v1.0.0 (2017/07/27 23:04 +00:00)
+- [d9f6ac5](https://github.com/willyb321/gthsManage/commit/d9f6ac5f4b0c06c97bc9389ea64b307429686359) maybe make config file be read properly (@willyb321)
+
+### v0.9.0 (2017/07/27 22:57 +00:00)
+- [1829e6e](https://github.com/willyb321/gthsManage/commit/1829e6e2c029359f8e626d23b5d9095137ae81ba) we can prolly use brew (@willyb321)
+
+### v0.8.0 (2017/07/27 22:50 +00:00)
+- [4f5bd57](https://github.com/willyb321/gthsManage/commit/4f5bd5721bcd5bc2ecd381b420bcbf35f2d8ae3d) changelog (@willyb321)
+
 ### v0.7.0 (2017/07/27 22:38 +00:00)
 - [54ce87d](https://github.com/willyb321/gthsManage/commit/54ce87d9dba3bdd41e1bcc80a4de9293a7e43512) make sure that github changes failing doesnt fail the entire script (@willyb321)
 
