@@ -53,7 +53,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 	home, _ := homedir.Dir()
-	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.gthsManage.yaml)")
+	RootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default is $HOME/.gthsManage.yaml)")
 	RootCmd.PersistentFlags().StringVarP(&ip, "ip", "i", "10.178.x.x", "IP of noticeboard")
 	RootCmd.PersistentFlags().StringVarP(&port, "port", "p", "1471", "SSH port of noticeboard")
 	RootCmd.PersistentFlags().StringVarP(&idRSA, "idfile", "f", home+"/.ssh/id_rsa", "Full path to your private ssh key")
