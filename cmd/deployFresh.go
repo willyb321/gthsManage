@@ -24,8 +24,8 @@ import (
 // deployFreshCmd represents the deployFresh command
 var deployFreshCmd = &cobra.Command{
 	Use:   "deployFresh",
-	Short: "Redeploy the noticeboard if Chrome is not already open.",
-	Long:  `Redeploy the noticeboard if Chrome is not already open. Use deploy if already open.`,
+	Short: "Deploy the noticeboard if Chrome is not already open.",
+	Long:  `Deploy the noticeboard if Chrome is not already open. Use deploy if already open.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		output, err := deployFresh()
 		if err != nil {
