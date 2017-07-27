@@ -1,5 +1,6 @@
 builds:
   - binary: gthsmanage
+  - main: main.go
     goos:
       - windows
       - darwin
