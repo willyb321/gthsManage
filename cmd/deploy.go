@@ -27,6 +27,8 @@ var deployCmd = &cobra.Command{
 	},
 }
 
+var fresh bool
+
 func deploy() (output io.Reader, err error) {
 	client := sshConnect()
 	session, err := client.NewSession()
@@ -43,7 +45,11 @@ func deploy() (output io.Reader, err error) {
 		fmt.Println(err)
 	}
 	output = io.MultiReader(outReader, errReader)
-	err = session.Start("/home/gths/update.sh")
+	if fresh == false {
+		err = session.Start("/home/gths/update.sh")
+	} else {
+		err = session.Start("/home/gths/bootboard.sh")
+	}
 	// client.Close()
 	if err != nil {
 		fmt.Println(err)
@@ -53,7 +59,7 @@ func deploy() (output io.Reader, err error) {
 
 func init() {
 	RootCmd.AddCommand(deployCmd)
-
+	deployCmd.Flags().BoolVar(&fresh, "fresh", false, "True if chrome not already open")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
