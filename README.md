@@ -1,6 +1,18 @@
 # gthsManage
 
-## Usage
+<!-- TOC -->
+
+- [gthsManage](#gthsmanage)
+- [What's it for?](#whats-it-for)
+- [Usage](#usage)
+- [Config file example](#config-file-example)
+
+<!-- /TOC -->
+
+# What's it for?
+Gthsmanage is used to keep the noticeboard that I made up and running in an easily managable way when I am no longer able to manage the noticeboard. I also made it because I was a bit bored really. But hey its a useful thing to make.
+
+# Usage
 ```
 Stuff to keep the GTHS Noticeboard running.
 
@@ -24,7 +36,7 @@ Flags:
 Use "gthsManage [command] --help" for more information about a command.
 ```
 
-## Config file example
+# Config file example
 
 ```yml
 ip: 10.178.1.170
