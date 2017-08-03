@@ -8,13 +8,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// deployCmd represents the deploy command
-var deployCmd = &cobra.Command{
-	Use:   "deploy",
-	Short: "Redeploy the noticeboard if Chrome is already open.",
-	Long:  `Redeploy the noticeboard if Chrome is already open. Use deploy --fresh if not already open.`,
+// deployedCmd represents the deployed command
+var deployedCmd = &cobra.Command{
+	Use:   "deployed",
+	Short: "Checks if the noticeboard is deployed.",
+	Long: `Checks if the noticeboard is deployed.
+Will say "Deployed." if deployed, and "Not deployed." if not deployed`,
 	Run: func(cmd *cobra.Command, args []string) {
-		output, err := deploy()
+		output, err := isDeployed()
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -23,19 +24,15 @@ var deployCmd = &cobra.Command{
 		for scanner.Scan() {
 			fmt.Printf(scanner.Text())
 		}
-		fmt.Println("Deploy called")
 	},
 }
 
-var fresh bool
-
-func deploy() (output io.Reader, err error) {
+func isDeployed() (output io.Reader, err error) {
 	client := sshConnect()
 	session, err := client.NewSession()
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("About to deploy, this will take a while.")
 	outReader, err := session.StdoutPipe()
 	if err != nil {
 		fmt.Println(err)
@@ -45,12 +42,7 @@ func deploy() (output io.Reader, err error) {
 		fmt.Println(err)
 	}
 	output = io.MultiReader(outReader, errReader)
-	if fresh == false {
-		err = session.Start("/home/gths/update.sh")
-	} else {
-		err = session.Start("/home/gths/bootboard.sh")
-	}
-	// client.Close()
+	err = session.Start("/home/gths/isdeployed.sh")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -58,15 +50,15 @@ func deploy() (output io.Reader, err error) {
 }
 
 func init() {
-	RootCmd.AddCommand(deployCmd)
-	deployCmd.Flags().BoolVar(&fresh, "fresh", false, "True if chrome not already open")
+	isCmd.AddCommand(deployedCmd)
+
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// deployCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// deployedCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// deployCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// deployedCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
