@@ -1,6 +1,12 @@
 ## Change Log
 
-### upcoming (2017/07/28 01:43 +00:00)
+### v1.1.4 (2017/08/03 23:29 +00:00)
+- [3a1f838](https://github.com/willyb321/gthsmanage/commit/3a1f838348a288c7e443e3da2fe71395b65e59a5) add is deployed and is rebootrequired (@willyb321)
+
+### v1.1.3 (2017/07/29 02:15 +00:00)
+- [63bc583](https://github.com/willyb321/gthsmanage/commit/63bc583ffac734475a30668bae863ad772cdbb71) update readme some more (@willyb321)
+- [374a15b](https://github.com/willyb321/gthsmanage/commit/374a15b7896ebaaace36c460aa2315e97178ce15) README a bit (@willyb321)
+- [7e0f80b](https://github.com/willyb321/gthsmanage/commit/7e0f80bd7d80364573714077c6de9cd17786c3a1) changelog (@willyb321)
 - [b23bfad](https://github.com/willyb321/gthsmanage/commit/b23bfad12e6d0457957c6147c78319c6afba6aa8) lowercase (@willyb321)
 
 ### v1.1.2 (2017/07/28 01:38 +00:00)
