@@ -23,6 +23,7 @@ Available Commands:
   config      Config checker / creator
   deploy      Redeploy the noticeboard if Chrome is already open.
   help        Help about any command
+  is          Checks the status of various things.
   reboot      Reboot the GTHS Noticeboard.
   update      Update packages.
 
