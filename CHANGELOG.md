@@ -1,5 +1,10 @@
 ## Change Log
 
+### upcoming (2017/08/06 22:44 +00:00)
+- [e07e85f](https://github.com/willyb321/gthsmanage/commit/e07e85f24242782ce359df8d178c3bc8e40629d8) add license headers (@willyb321)
+- [0c18a95](https://github.com/willyb321/gthsmanage/commit/0c18a95c3596ee54ec75c8ca4577c02bb27fcad9) update readme (@willyb321)
+- [8e2200c](https://github.com/willyb321/gthsmanage/commit/8e2200cd2075ae5011e1d664663201089573aaa6) changelog (@willyb321)
+
 ### v1.1.4 (2017/08/03 23:29 +00:00)
 - [3a1f838](https://github.com/willyb321/gthsmanage/commit/3a1f838348a288c7e443e3da2fe71395b65e59a5) add is deployed and is rebootrequired (@willyb321)
 
