@@ -21,61 +21,59 @@
 package cmd
 
 import (
-	"bufio"
 	"fmt"
-	"io/ioutil"
-	"os"
-	"path/filepath"
 
-	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
-// createCmd represents the create command
-var createCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Create config file based on questions",
-	Long:  `Create config file based on questions`,
+// everythingisbrokenhelpCmd represents the everythingisbrokenhelp command
+var everythingisbrokenhelpCmd = &cobra.Command{
+	Use:   "everythingisbrokenhelp",
+	Short: "Contact me directly.",
+	Long:  `Contact me directly. Only use if literally everything is broken yeah?`,
 	Run: func(cmd *cobra.Command, args []string) {
-		createConfig()
-		fmt.Println("create called")
+		help := everythingisbrokenhelp()
+		if help {
+			fmt.Println("Expect a call in a bit.")
+		} else {
+			fmt.Println("dunno")
+		}
 	},
 }
 
-func createConfig() {
-	scanner := bufio.NewScanner(os.Stdin)
-	var text string
-	i := 0
-	configs := []string{}
-	configToGet := []string{"IP Address", "Port", "SSH Key File", "Phone Number (for Verification)"}
-	for text != "q" && i < 4 { // break the loop if text == "q"
-		fmt.Print("Enter the " + configToGet[i] + ": ")
-		scanner.Scan()
-		text = scanner.Text()
-		if text != "q" {
-			configs = append(configs, text)
-			dir, _ := homedir.Dir()
-			if i == 3 {
-				data := fmt.Sprintf("ip: %v\nport: %v\nidfile: %s\nphoneverify: %s", configs[0], configs[1], filepath.Join(configs[2]), configs[3])
-				ioutil.WriteFile(filepath.Join(dir, ".gthsManage.yaml"), []byte(data), 0644)
-				fmt.Println("Wrote the following config:")
-				fmt.Println(data)
-			}
+func everythingisbrokenhelp() bool {
+	fmt.Println("This will send a notification to me - so don't abuse it yeah. Only use if literally everything is broken")
+	fmt.Println("Are you sure you want to do this? y/n")
+	confirm := askForConfirmation()
+	if confirm != false {
+		client := sshConnect()
+		session, err := client.NewSession()
+		if err != nil {
+			fmt.Println(err)
 		}
-		i++
+		var phone string
+		if viper.IsSet("phoneverify") {
+			phone = viper.GetString("phoneverify")
+		}
+		err = session.Start("/home/gths/everythingisbrokenhelp.sh " + phone)
+		if err != nil {
+			fmt.Println(err)
+		}
+		return true
 	}
+	return false
 }
-
 func init() {
-	configCmd.AddCommand(createCmd)
+	RootCmd.AddCommand(everythingisbrokenhelpCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// createCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// everythingisbrokenhelpCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// everythingisbrokenhelpCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
