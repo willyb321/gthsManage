@@ -55,6 +55,8 @@ func everythingisbrokenhelp() bool {
 		var phone string
 		if viper.IsSet("phoneverify") {
 			phone = viper.GetString("phoneverify")
+		} else {
+			phone = viper.GetString("phone")
 		}
 		err = session.Start("/home/gths/everythingisbrokenhelp.sh " + phone)
 		if err != nil {
@@ -68,7 +70,7 @@ func init() {
 	RootCmd.AddCommand(everythingisbrokenhelpCmd)
 
 	// Here you will define your flags and configuration settings.
-
+	everythingisbrokenhelpCmd.PersistentFlags().String("phone", "", "The correct phone number.")
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
 	// everythingisbrokenhelpCmd.PersistentFlags().String("foo", "", "A help for foo")
