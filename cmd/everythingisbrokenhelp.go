@@ -57,7 +57,7 @@ func everythingisbrokenhelp() bool {
 		if viper.IsSet("phoneverify") && phone == "" {
 			phone = viper.GetString("phoneverify")
 		}
-		err = session.Start("/home/gths/everythingisbrokenhelp.sh " + phone)
+		err = session.Run("/home/gths/everythingisbrokenhelp.sh " + phone)
 		if err != nil {
 			fmt.Println(err)
 		}
