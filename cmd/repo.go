@@ -29,35 +29,35 @@ import (
 	"github.com/spf13/viper"
 )
 
-// jokeCmd represents the joke command
-var jokeCmd = &cobra.Command{
-	Use:   "joke",
-	Short: "Reset the joke on the noticeboard.",
-	Long:  `Reset the joke on the noticeboard. Use if inappropriate.`,
+// repoCmd represents the repo command
+var repoCmd = &cobra.Command{
+	Use:   "resetrepo",
+	Short: "Reset the repo on the noticeboard.",
+	Long:  `Reset the repo on the noticeboard. Use if inappropriate. Good chance you wont have to use this.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if viper.IsSet("ip") {
 			ip = viper.GetString("ip")
 		}
-		resp, err := http.Get("http://" + ip + "/mate/resetjoke")
+		resp, err := http.Get("http://" + ip + "/mate/resetrepo")
 		if err != nil {
 			fmt.Println("Failed. Try again.")
 		}
 		body, err := ioutil.ReadAll(resp.Body)
 		fmt.Println(body)
-		fmt.Println("Joke reset")
+		fmt.Println("Repo reset")
 	},
 }
 
 func init() {
-	RootCmd.AddCommand(jokeCmd)
+	RootCmd.AddCommand(repoCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// jokeCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// repoCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// jokeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// repoCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
