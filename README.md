@@ -11,6 +11,7 @@
 
 # What's it for?
 Gthsmanage is used to keep the noticeboard that I made up and running in an easily managable way when I am no longer able to manage the noticeboard. I also made it because I was a bit bored really. But hey its a useful thing to make.
+Also its basically just a wrapper for some shell scripts.
 
 # Usage
 ```
@@ -20,12 +21,14 @@ Usage:
   gthsManage [command]
 
 Available Commands:
-  config      Config checker / creator
-  deploy      Redeploy the noticeboard if Chrome is already open.
-  help        Help about any command
-  is          Checks the status of various things.
-  reboot      Reboot the GTHS Noticeboard.
-  update      Update packages.
+  config                 Config checker / creator
+  deploy                 Redeploy the noticeboard if Chrome is already open.
+  everythingisbrokenhelp Contact me directly.
+  help                   Help about any command
+  is                     Checks the status of various things.
+  reboot                 Reboot the GTHS Noticeboard.
+  resetrepo              Reset the repo on the noticeboard.
+  update                 Update packages.
 
 Flags:
   -c, --config string   config file (default is $HOME/.gthsManage.yaml)
