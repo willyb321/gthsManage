@@ -1,6 +1,21 @@
 ## Change Log
 
-### upcoming (2017/08/06 22:44 +00:00)
+### v1.1.9 (2017/09/19 04:54 +00:00)
+- [fc35eb8](https://github.com/willyb321/gthsmanage/commit/fc35eb8a16f12e864381e9144fbd3053592418c8) change joke to repo (@willyb321)
+- [9232138](https://github.com/willyb321/gthsmanage/commit/9232138db7781a1b09c16fad981e0d27306d9182) .idea (@willyb321)
+- [c952d16](https://github.com/willyb321/gthsmanage/commit/c952d16eb859cb4ebbd4d994418b95447275438d) gitignore (@willyb321)
+
+### v1.1.8 (2017/09/12 02:42 +00:00)
+- [0cb8d1f](https://github.com/willyb321/gthsmanage/commit/0cb8d1fff575d7e4b0c6a93382b73884c97b15e1) add joke (@willyb321)
+
+### v1.1.7 (2017/09/04 22:05 +00:00)
+- [b223d34](https://github.com/willyb321/gthsmanage/commit/b223d34a3ed9f666ac0c467284588c2ef316be51) fix everythingisbrokenhelp command (@willyb321)
+- [de7bb7a](https://github.com/willyb321/gthsmanage/commit/de7bb7a81e5239bcbe3e865aee686dd881325a01) i know how to golang (@willyb321)
+- [cd2323e](https://github.com/willyb321/gthsmanage/commit/cd2323e827e8d15d18ed73caf34171bfd37e7cfa) add flag for phone (@willyb321)
+
+### v1.1.5 (2017/08/31 05:43 +00:00)
+- [6c5c067](https://github.com/willyb321/gthsmanage/commit/6c5c067e69f7223deb4dc4049f2079d0e7191d34) add everythingisbrokenhelp command (@willyb321)
+- [17d8b5e](https://github.com/willyb321/gthsmanage/commit/17d8b5e4241b579ace667b48010cf6d8255bfe7b) readme (@willyb321)
 - [e07e85f](https://github.com/willyb321/gthsmanage/commit/e07e85f24242782ce359df8d178c3bc8e40629d8) add license headers (@willyb321)
 - [0c18a95](https://github.com/willyb321/gthsmanage/commit/0c18a95c3596ee54ec75c8ca4577c02bb27fcad9) update readme (@willyb321)
 - [8e2200c](https://github.com/willyb321/gthsmanage/commit/8e2200cd2075ae5011e1d664663201089573aaa6) changelog (@willyb321)
