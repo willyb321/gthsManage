@@ -13,6 +13,15 @@
 Gthsmanage is used to keep the noticeboard that I made up and running in an easily managable way when I am no longer able to manage the noticeboard. I also made it because I was a bit bored really. But hey its a useful thing to make.
 Also its basically just a wrapper for some shell scripts.
 
+# Installing 
+
+```bash
+# if homebrew not alredy installed
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap willyb321/brewing
+brew install gthsmanage
+```
+
 # Usage
 ```
 Stuff to keep the GTHS Noticeboard running.
